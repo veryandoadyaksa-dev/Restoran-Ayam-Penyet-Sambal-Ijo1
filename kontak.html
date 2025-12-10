@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Kontak — Restoran Ayam Penyet Sambal Ijo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <div class="menu navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Pemesanan</a>
+      <a href="kontak.html" class="active">Kontak</a>
+      <a href="followus.html">Follow Us</a>
+    </div>
+    <div class="hamburger" id="hamburger5"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero" style="min-height:36vh; background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('img/hero.jpg') center/cover no-repeat;">
+    <div class="center">
+      <h1>Hubungi Kami</h1>
+      <p>Kontak cepat, pemesanan, atau pertanyaan – kami siap membantu.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-title"><h2><span>Informasi</span> Kontak</h2></section>
+
+    <div class="contact-grid">
+      <div class="info-box">
+        <h4>Alamat</h4>
+        <p>Jl. W.R. Supratman, Unib Belakang, Kota Bengkulu</p>
+      </div>
+
+      <div class="info-box">
+        <h4>Email</h4>
+        <p>RAPsambalijo@gmail.com</p>
+      </div>
+    </div>
+
+    <section style="margin-top:22px;">
+      <div class="form-box">
+        <h3>Kirim Pesan</h3>
+        <form id="contactForm">
+          <input type="text" id="cname" placeholder="Nama Anda" required>
+          <input type="email" id="cemail" placeholder="Email Anda" required>
+          <textarea id="cmsg" rows="5" placeholder="Tulis pesan..." required></textarea>
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>Ikuti kami di Instagram & Facebook untuk promo & menu baru.</p>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById('hamburger5')?.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+
+  // simple form submit (demo only)
+  document.getElementById('contactForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    alert('Pesan terkirim — terima kasih!');
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>

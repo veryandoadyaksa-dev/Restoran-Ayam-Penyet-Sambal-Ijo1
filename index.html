@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Restoran Ayam Penyet Sambal Ijo — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+
+    <div class="menu navbar-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Pemesanan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="followus.html">Follow Us</a>
+    </div>
+
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero home-hero">
+    <div class="center">
+      <h1>Cita Rasa Unik Dalam Setiap Gigitan</h1>
+      <p>Terhidang sajian berkualitas — sambal ijo segar, bahan terbaik, harga ramah.</p>
+      <a class="btn" href="menu.html">Lihat Menu</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-title">
+      <h2><span>Menu</span> Pilihan</h2>
+    </section>
+
+    <div class="menu-grid">
+      <div class="card">
+        <img src="Images/AYAM PENYET.jpeg" alt="Ayam Penyet">
+        <h3>Ayam Penyet Sambal Ijo</h3>
+        <div class="price">Rp 15.000</div>
+        <p>Ayam goreng renyah berpadu sambal hijau segar.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/GURAME.jpeg" alt="Gurame">
+        <h3>Gurame Sambal Ijo</h3>
+        <div class="price">Rp 18.000</div>
+        <p>Gurame segar, sambal khas, gurih menggugah.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/DAGING.jpg" alt="Daging">
+        <h3>Daging Sambal Ijo</h3>
+        <div class="price">Rp 20.000</div>
+        <p>Daging sapi empuk berpadu sambal harum.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  // Mobile menu toggle
+  const hb = document.getElementById('hamburger');
+  hb && hb.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+</script>
+
+</body>
+</html>

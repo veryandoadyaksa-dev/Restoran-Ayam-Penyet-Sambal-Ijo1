@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Menu — Restoran Ayam Penyet Sambal Ijo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <div class="menu navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="order.html">Pemesanan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="followus.html">Follow Us</a>
+    </div>
+    <div class="hamburger" id="hamburger3"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero" style="min-height:34vh; background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('img/hero.jpg') center/cover no-repeat;">
+    <div class="center">
+      <h1>Daftar Menu</h1>
+      <p>Pilih menu favoritmu — semua siap disajikan dengan cinta.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-title">
+      <h2><span>Menu</span> Kami</h2>
+    </section>
+
+    <div class="menu-grid">
+      <!-- Copy cards from index or add more -->
+      <div class="card">
+        <img src="Images/AYAM PENYET.jpeg" alt="">
+        <h3>Ayam Penyet Sambal Ijo</h3><div class="price">Rp 15.000</div>
+        <p>Ayam goreng renyah & sambal ijo pedas segar.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/GURAME.jpeg" alt="">
+        <h3>Gurame Sambal Ijo</h3><div class="price">Rp 18.000</div>
+        <p>Ikan gurame segar dengan sambal khas.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/DAGING.jpg" alt="">
+        <h3>Daging Sambal Ijo</h3><div class="price">Rp 20.000</div>
+        <p>Daging empuk berpadu sambal nikmat.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/IKAN.jpg" alt="">
+        <h3>Ikan Sambal Ijo</h3><div class="price">Rp 12.000</div>
+        <p>Ikan gurih disajikan dengan lalapan segar.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/Telur.jpg" alt="">
+        <h3>Telur Ceplok Sambal Ijo</h3><div class="price">Rp 10.000</div>
+        <p>Sederhana namun penuh rasa.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/MINUMAN.jpg" alt="">  
+        <h3>Aneka Minuman</h3><div class="price">Mulai Rp 5.000</div>
+        <p>Minuman segar pilihan untuk menemani.</p>
+      </div>
+
+      <div class="card">
+        <img src="Images/JUICE.jpg" alt="">
+        <h3>Special Juice</h3><div class="price">Mulai Rp 8.000</div>
+        <p>Jus premium penuh kesegaran.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById('hamburger3')?.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+</script>
+
+</body>
+</html>

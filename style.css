@@ -1,0 +1,194 @@
+
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { height:100%; }
+body{
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg,#ff6a00 0%, #ffb650 50%, #ff8800 100%);
+  background-size: 200% 200%;
+  animation: bgAnimate 18s ease-in-out infinite;
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+}
+
+/* Utilities */
+.container { width:90%; max-width:1100px; margin:40px auto; }
+.center { text-align:center; }
+
+/* BG animation */
+@keyframes bgAnimate {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+.navbar{
+  width:100%;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: rgba(0,0,0,0.30);
+  backdrop-filter: blur(8px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.navbar .brand{
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+}
+.navbar .brand span{ color:#ffe100; }
+.navbar .menu{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.navbar .menu a{
+  color:#fff; text-decoration:none; font-weight:500; padding:8px 12px; border-radius:8px;
+}
+.navbar .menu a:hover,
+.navbar .menu a.active{
+  background: rgba(255,255,255,0.08);
+  color:#fff;
+}
+
+/* Hamburger (mobile) */
+.hamburger{ display:none; cursor:pointer; width:36px; height:36px; align-items:center; justify-content:center; }
+.hamburger span{ display:block; width:22px; height:2px; background:#fff; margin:3px 0; transition:0.25s; }
+
+/* HERO */
+.hero{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('img/hero.jpg') center/cover no-repeat;
+}
+.hero h1{ font-size: clamp(28px, 4vw, 48px); font-weight:800; margin-bottom:12px; text-shadow:0 6px 18px rgba(0,0,0,0.5); }
+.hero p{ font-size:clamp(14px,1.6vw,18px); margin-bottom:18px; color:#fff; opacity:0.95; max-width:900px; }
+.btn{
+  display:inline-block; background:#2c7e3f; color:#fff; padding:12px 22px; border-radius:12px; text-decoration:none; font-weight:700;
+  box-shadow:0 10px 30px rgba(44,126,63,0.18);
+}
+.btn:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(44,126,63,0.28); }
+
+/* SECTION TITLES */
+.section-title{ margin-bottom:22px; }
+.section-title h2{ font-size:28px; color:#fff; }
+.section-title h2 span{ color:#ffe100; }
+
+/* MENU GRID */
+.menu-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  margin-top:18px;
+}
+.card{
+  background: rgba(255,255,255,0.12);
+  padding:16px;
+  border-radius:14px;
+  backdrop-filter: blur(6px);
+  transition:0.35s;
+  box-shadow:0 8px 30px rgba(0,0,0,0.25);
+  color:#fff;
+}
+.card img{ width:100%; height:150px; object-fit:cover; border-radius:10px; margin-bottom:12px; display:block; }
+.card h3{ margin-bottom:6px; font-size:18px; }
+.card .price{ color:#ffe100; font-weight:700; margin-bottom:8px; }
+.card p{ color:rgba(255,255,255,0.9); font-size:14px; }
+.card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.35); }
+
+/* CONTACT / FORM */
+.contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:start; }
+.info-box{ background: rgba(255,255,255,0.08); padding:20px; border-radius:12px; }
+.info-box h4{ color:#ffe100; margin-bottom:8px; }
+.form-box{ background: rgba(255,255,255,0.12); padding:20px; border-radius:12px; }
+input, textarea, select{
+  width:100%; padding:12px; margin-top:10px; border-radius:10px; border:none; background: rgba(255,255,255,0.9); color:#111;
+}
+input:focus, textarea:focus, select:focus{ outline:none; box-shadow:0 8px 20px rgba(0,0,0,0.12); transform:translateY(-2px); }
+
+/* ORDER PAGE - SMALL RECEIPT POPUP */
+.receipt-popup{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:2000;
+}
+.receipt-box{
+  width:90%; max-width:420px; background:#fff; color:#111; padding:18px; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+.footer{
+  margin-top:40px; padding:28px 6%; text-align:center; background: rgba(0,0,0,0.35); color:#fff; border-top:1px solid rgba(255,255,255,0.05);
+}
+.footer .logo{ font-weight:700; font-size:18px; }
+.footer p{ opacity:0.9; margin-top:10px; font-size:14px; }
+
+/* SMALLER SCREENS */
+@media (max-width: 900px){
+  .contact-grid{ grid-template-columns: 1fr; }
+  .hero{ padding:40px 16px; }
+}
+@media (max-width: 720px){
+  .navbar .menu{ display:none; }
+  .hamburger{ display:flex; }
+  .navbar.open .menu{ display:flex; position:fixed; left:0; top:64px; right:0; background:rgba(0,0,0,0.85); flex-direction:column; gap:14px; padding:20px; z-index:1500; }
+  .menu a{ padding:12px 18px; display:block; }
+  .menu-grid{ grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); }
+}
+/* ==== GLOBAL BACKGROUND PREMIUM ==== */
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+
+    /* Pattern Daun Sambal Ijo */
+    background: url('Images/Background.png');
+    background-size: 250px;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay Gelap Premium */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); 
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+/* Warna teks agar tetap jelas */
+h1, h2, h3, p, a, span, .navbar, .footer {
+    color: #fff !important;
+}
+.about-hero {
+    min-height: 40vh;
+    background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('Images/Background\ profil.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* ==== HERO DENGAN BACKGROUND FOTO PERUSAHAAN ==== */
+.home-hero {
+    min-height: 90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('Images/Background\ profil.jpeg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+

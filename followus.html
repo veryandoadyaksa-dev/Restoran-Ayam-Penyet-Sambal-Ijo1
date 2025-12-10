@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Follow Us — Restoran Ayam Penyet Sambal Ijo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <div class="menu navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Pemesanan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="followus.html" class="active">Follow Us</a>
+    </div>
+    <div class="hamburger" id="hamburger6"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero" style="min-height:36vh; background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('img/hero.jpg') center/cover no-repeat;">
+    <div class="center">
+      <h1>Follow Us</h1>
+      <p>Ikuti update menu, promo, dan cerita dapur kami di sosial media.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-title"><h2><span>Sosial</span> Media</h2></section>
+
+    <div class="menu-grid">
+      <a class="follow-card" href="https://www.instagram.com/rapsambalijo" target="_blank">
+    <img src="Images/logo ig.png" alt="https://www.instagram.com/adyaksaveryando_/."/>
+    <h3>Instagram</h3>
+    <p>@rapsambalijo</p>
+</a>
+   <a class="follow-card" href="https://www.facebook.com/rapsambalijo" target="_blank">
+    <img src="Images/logo fb.png" alt="https://www.facebook.com/share/1G9WBwPkn9/"/>
+    <h3>Facebook</h3>
+    <p>RAP Sambal Ijo</p>
+</a>
+   <a class="follow-card" href="https://www.tiktok.com/@rapsambalijo" target="_blank">
+    <img src="Images/logo tiktok.png" alt="https://www.tiktok.com/@agen_langitt?_r=1&_t=ZS-926MhMJ4Rhk"/>
+    <h3>TikTok</h3>
+    <p>@rapsambalijo</p>
+</a>
+ </div>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById('hamburger6')?.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+</script>
+
+</body>
+</html>

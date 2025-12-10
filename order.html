@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Pemesanan — Restoran Ayam Penyet Sambal Ijo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <div class="menu navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">Tentang</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html" class="active">Pemesanan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="followus.html">Follow Us</a>
+    </div>
+    <div class="hamburger" id="hamburger4"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero" style="min-height:36vh; background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('img/hero.jpg') center/cover no-repeat;">
+    <div class="center">
+      <h1>Pemesanan</h1>
+      <p>Isi form berikut, hitung total, dan download struk.</p>
+    </div>
+  </header>
+
+  <main class="container order-container">
+    <section class="section-title"><h2><span>Form</span> Pemesanan</h2></section>
+
+    <div class="form-box">
+      <form id="orderForm">
+        <label>Nama</label>
+        <input id="custName" type="text" required/>
+
+        <label>Pilih Menu</label>
+        <select id="product" required>
+          <option value="" data-price="0">-- Pilih Produk --</option>
+          <option value="Ayam Penyet" data-price="15000">Ayam Penyet — Rp 15.000</option>
+          <option value="Gurame" data-price="18000">Gurame — Rp 18.000</option>
+          <option value="Daging" data-price="20000">Daging — Rp 20.000</option>
+          <option value="Ikan" data-price="12000">Ikan — Rp 12.000</option>
+          <option value="Telur" data-price="10000">Telur — Rp 10.000</option>
+          <option value="Minuman" data-price="5000">Minuman — Rp 5.000</option>
+          <option value="Special Juice" data-price="8000">Special Juice — Rp 8.000</option>
+        </select>
+
+        <label>Jumlah</label>
+        <input id="qty" type="number" min="1" value="1" required/>
+
+        <label>Alamat Pengiriman</label>
+        <textarea id="addr" rows="3" required></textarea>
+
+        <button type="submit" class="btn">Hitung & Tampilkan Struk</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Receipt popup -->
+  <div class="receipt-popup" id="receiptPopup">
+    <div class="receipt-box" id="receiptBox">
+      <h3>Struk Pembelian</h3>
+      <pre id="receiptText" style="white-space:pre-wrap;"></pre>
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button id="downloadBtn">Download Struk (.txt)</button>
+        <button id="closeReceipt">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById('hamburger4')?.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+
+  const orderForm = document.getElementById('orderForm');
+  const receiptPopup = document.getElementById('receiptPopup');
+  const receiptText = document.getElementById('receiptText');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const closeReceipt = document.getElementById('closeReceipt');
+
+  orderForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('custName').value;
+    const prodEl = document.getElementById('product');
+    const prod = prodEl.value;
+    const price = parseInt(prodEl.options[prodEl.selectedIndex].dataset.price || 0);
+    const qty = parseInt(document.getElementById('qty').value || 1);
+    const addr = document.getElementById('addr').value;
+    const total = price * qty;
+
+    const text = `===============================
+         RESTORAN AYAM PENYET
+===============================
+Nama : ${name}
+Produk: ${prod}
+Harga satuan: Rp ${price.toLocaleString()}
+Jumlah : ${qty}
+
+-------------------------------
+TOTAL BAYAR : Rp ${total.toLocaleString()}
+-------------------------------
+
+Alamat Pengiriman:
+${addr}
+
+Terima kasih telah memesan!
+===============================`;
+
+    receiptText.textContent = text;
+    receiptPopup.style.display = 'flex';
+  });
+
+  closeReceipt.addEventListener('click', ()=> receiptPopup.style.display='none');
+
+  downloadBtn.addEventListener('click', ()=>{
+    const text = receiptText.textContent || '';
+    const blob = new Blob([text], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'struk-pembelian.txt'; a.click();
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+</body>
+</html>

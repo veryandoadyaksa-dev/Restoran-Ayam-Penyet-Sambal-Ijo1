@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Tentang — Restoran Ayam Penyet Sambal Ijo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand navbar-logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <div class="menu navbar-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">Tentang</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Pemesanan</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="followus.html">Follow Us</a>
+    </div>
+    <div class="hamburger" id="hamburger2"><span></span><span></span><span></span></div>
+  </nav>
+
+  <header class="hero about-hero">
+    <div class="center">
+      <h1>Tentang Kami</h1>
+      <p>Profil perusahaan & misi menghadirkan cita rasa Nusantara.</p>
+    </div>
+</header>
+
+  <main class="container about-container">
+    <section>
+      <h2 class="section-title"><span>Profil</span> Perusahaan</h2>
+      <p>Restoran Ayam Penyet Sambal Ijo berdiri untuk menghadirkan rasa autentik sambal ijo. Kami memakai bahan berkualitas, proses higienis, dan pelayanan ramah.</p>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h3>Visi</h3>
+      <p>Menjadi restoran kuliner Nusantara yang dikenal setiap keluarga Indonesia.</p>
+
+      <h3 style="margin-top:12px;">Misi</h3>
+      <ul style="margin-top:8px; color:rgba(255,255,255,0.95);">
+        <li>Mengutamakan bahan halal & berkualitas.</li>
+        <li>Memberi pelayanan prima.</li>
+        <li>Inovasi menu secara berkala.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Restoran Ayam Penyet <span>Sambal Ijo</span></div>
+    <p>© 2025 Restoran Ayam Penyet Sambal Ijo. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  document.getElementById('hamburger2')?.addEventListener('click', ()=> document.querySelector('.navbar').classList.toggle('open'));
+</script>
+
+</body>
+</html>
